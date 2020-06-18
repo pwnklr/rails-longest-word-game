@@ -1,0 +1,18 @@
+<ul class="text-decoration-none">
+  <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token%>
+  <%= hidden_field_tag :grid, @letters%>
+  <div class="input-group mb-3 w-25">
+    <label for="wordChoice">What's the longest word you can find?</label>
+    <div class="input-group-prepend">
+      <input type="text" name="answer" class="form-control" id="wordChoice" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      <button class="btn btn-primary" type="submit">Ask</button>
+    </div>
+  </div>
+</form>
